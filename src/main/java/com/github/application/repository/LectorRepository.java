@@ -12,4 +12,7 @@ import java.util.List;
 public interface LectorRepository extends JpaRepository<Lector, Long> {
     @Query("SELECT l.degree, COUNT(l) FROM Lector l JOIN l.departments d WHERE d.name = :departmentName GROUP BY l.degree")
     List<Object[]> countDegreeByDepartment(@Param("departmentName") String departmentName);
+
+    @Query("SELECT l FROM Lector l WHERE LOWER(l.name) LIKE LOWER(:searchTerm)")
+    List<Lector> findByNameContainingIgnoreCase(@Param("searchTerm") String searchTerm);
 }
