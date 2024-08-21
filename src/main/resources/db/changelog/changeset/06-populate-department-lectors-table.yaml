@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 06-populate-department-lectors-table
+      author: Andrii Kolomoiets
+      changes:
+        - loadData:
+            file: db/data/department_lectors.csv
+            tableName: department_lectors
+            columns:
+              - column:
+                  name: department_id
+                  type: BIGINT
+              - column:
+                  name: lector_id

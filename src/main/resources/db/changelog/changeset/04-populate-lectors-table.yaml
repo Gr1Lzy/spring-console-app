@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 04-populate-lectors-table
+      author: Andrii Kolomoiets
+      changes:
+        - loadData:
+            file: db/data/lectors.csv
+            tableName: lectors
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+              - column:
+                  name: degree
+              - column:
+                  name: salary

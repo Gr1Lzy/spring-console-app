@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-populate-departments-table
+      author: Andrii Kolomoiets
+      changes:
+        - loadData:
+            file: db/data/departments.csv
+            tableName: departments
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+              - column:
+                  name: head_of_department_id
