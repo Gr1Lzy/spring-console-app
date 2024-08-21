@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03-create-department-lectors-table
+      author: Andrii Kolomoiets
+      changes:
+        - createTable:
+            tableName: department_lectors
+            columns:
+              - column:
+                  name: department_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lector_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            constraintName: fk_department_head
+            baseTableName: departments
+            baseColumnNames: head_of_department_id
+            referencedTableName: lectors
+            referencedColumnNames: id
+            onDelete: SET NULL
+        - addForeignKeyConstraint:
+            constraintName: fk_department_lectors_department
+            baseTableName: department_lectors
+            baseColumnNames: department_id
+            referencedTableName: departments
+            referencedColumnNames: id
+            onDelete: CASCADE
+        - addForeignKeyConstraint:
+            constraintName: fk_department_lectors_lector
+            baseTableName: department_lectors
+            baseColumnNames: lector_id
+            referencedTableName: lectors
+            referencedColumnNames: id
+            onDelete: CASCADE

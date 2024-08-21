@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-lectors-table
+      author: Andrii Kolomoiets
+      changes:
+        - createTable:
+            tableName: lectors
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: degree
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: salary
+                  type: DECIMAL(15,2)
+                  constraints:
+                    nullable: false
