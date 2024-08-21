@@ -4,11 +4,13 @@ import com.github.application.model.Degree;
 import com.github.application.repository.LectorRepository;
 import com.github.application.service.LectorService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 
-@Repository
+@Service
 @RequiredArgsConstructor
 public class LectorServiceImpl implements LectorService {
     private final LectorRepository lectorRepository;
