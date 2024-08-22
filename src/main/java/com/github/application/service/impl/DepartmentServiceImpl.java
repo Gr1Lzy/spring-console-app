@@ -3,7 +3,6 @@ package com.github.application.service.impl;
 import com.github.application.dto.DepartmentDto;
 import com.github.application.mapper.DepartmentMapper;
 import com.github.application.model.Department;
-import com.github.application.model.Lector;
 import com.github.application.repository.DepartmentRepository;
 import com.github.application.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
