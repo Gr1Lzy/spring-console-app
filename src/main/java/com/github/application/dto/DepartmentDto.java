@@ -9,6 +9,6 @@ import java.util.Set;
 public class DepartmentDto {
     private Long id;
     private String name;
-    private Long headOfDepartments;
+    private Lector headOfDepartment;
     private Set<Lector> lectors;
 }
