@@ -8,27 +8,16 @@ Before you begin, ensure you have the following installed:
 
 - **Java 17**
 - **Maven**
-- **PostgreSQL** (optional; H2 can be used as an alternative for development and testing)
+- **PostgreSQL** (H2 for test)
 
-## Clone the Repository
+## Running PostgreSQL Database
 
-If you haven't cloned the repository yet, you can do so using Git:
+To start the PostgreSQL database, use the following command in the root directory of your project:
 
 ```bash
-git clone https://github.com/Gr1Lzy/spring-console-app.git
+docker-compose up
 ```
-
-## Configuration of `.env` File
-
-To configure the PostgreSQL connection for your application, create a `.env` file in the root directory of your project and include the following properties:
-
-```env
-POSTGRES_URL=jdbc:postgresql://{URL}:{PORT}/{DBName}
-POSTGRES_USER={USERNAME}
-POSTGRES_PASSWORD={PASSWORD}
-```
-
-If you do not want to configure the `.env` file and do not have **PostgreSQL**, you can switch to the `dev` profile configuration. This profile uses an **H2 database**, which is suitable for development and testing purposes.
+Alternatively, you can select the `dev` profile to use a test H2 database instead of PostgreSQL.
 
 ## Data
 
