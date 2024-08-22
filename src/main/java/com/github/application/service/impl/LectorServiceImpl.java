@@ -15,7 +15,7 @@ import java.util.Map;
 public class LectorServiceImpl implements LectorService {
     private final LectorRepository lectorRepository;
 
-    public Map<Degree, Integer> getDegreeCount(String departmentName) {
+    public Map<Degree, Integer> getDegreeCountByDepartment(String departmentName) {
         List<Object[]> results = lectorRepository.countDegreeByDepartment(departmentName);
 
         Map<Degree, Integer> degreeCount = new EnumMap<>(Degree.class);

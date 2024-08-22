@@ -3,6 +3,7 @@ package com.github.application.service.impl;
 import com.github.application.dto.DepartmentDto;
 import com.github.application.mapper.DepartmentMapper;
 import com.github.application.model.Department;
+import com.github.application.model.Lector;
 import com.github.application.repository.DepartmentRepository;
 import com.github.application.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
@@ -20,13 +21,13 @@ public class DepartmentServiceImpl implements DepartmentService {
         Optional<Department> departmentOpt = departmentRepository.findByName(departmentName);
 
         if (departmentOpt.isEmpty()) {
-            return "No such department found";
+            return "";
         }
 
         Department department = departmentOpt.get();
         DepartmentDto departmentDto = DepartmentMapper.INSTANCE.toDto(department);
 
-        return departmentDto.getHeadOfDepartments().toString();
+        return departmentDto.getHeadOfDepartment().getName();
     }
 
     @Override
