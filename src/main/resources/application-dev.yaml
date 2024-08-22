@@ -2,7 +2,7 @@ spring:
   application:
     name: online-pizza-service
   datasource:
-    url: jdbc:h2:mem:univesityDB
+    url: jdbc:h2:mem:universityDB
     username: admin
     password: root
     driver-class-name: org.h2.Driver
